@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>acko Hack - STIP</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <script src="./app.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Travel Insurance Platform</h1>
+    <div class="row">
+      <div class="col">
+        Connectivity <span id="connectionStatus"></span>
+      </div>
+    </div>
+    <br>
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" href="#profile" role="tab" data-toggle="tab">System</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#buzz" role="tab" data-toggle="tab">Claim</a>
+      </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane in active" id="profile">
+        <form>
+          <div class="form-group">
+            <label for="address">Account Address</label>
+            <input type="text" class="form-control" id="address" placeholder="Enter Account Address" value="0x08f2d55d05394191e4ad6edb82d72e0f99db6674">
+          </div>
+          <div class="form-group">
+            <label for="smartContractSelect">Smart Contract</label>
+            <select class="form-control" id="smartContractSelect">
+              <option>LostBaggageClaim</option>
+              <option>FlightDelayed</option>
+              <option>FlightCancel</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="permissionLevelSelect">Permission Level</label>
+            <select class="form-control" id="permissionLevelSelect">
+              <option label="Execution">1</option>
+              <option label="MultiSig">2</option>
+              <option label="Read">3</option>
+            </select>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="App.addAccountToNetwork()">Add address to network </button>
+          <button type="button" class="btn btn-primary" onclick="App.listNetworkAccounts()">List</button>
+        </form>
+
+        <p id="status"></p>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="buzz">
+        <div id="events"></div>
+      </div>
+    </div>     
+  </div>
+</body>
+</html>
